@@ -1,0 +1,12 @@
+<div class="stepper-container">
+  <mat-horizontal-stepper class="no-selection">
+    <mat-step
+      *ngFor="let label of labels; let i = index"
+      [label]="label"
+      [editable]="false"
+      [completed]="(completed$ | async)?.[i]"
+    ></mat-step>
+  </mat-horizontal-stepper>
+
+  <amb-progress-bar [ratio$]="ratio$" />
+</div>

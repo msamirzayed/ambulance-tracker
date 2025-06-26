@@ -1,0 +1,5 @@
+<mat-progress-bar
+  class="progress-bar"
+  mode="determinate"
+  [value]="((ratio$ | async) ?? 0) * 100"
+></mat-progress-bar>

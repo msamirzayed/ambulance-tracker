@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+/**
+ * AppComponent is the root component that stitches together the Map, Stepper, and replay control.
+ *
+ * @selector amb-root
+ */
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SimulationService } from './core/services/simulation.service';
+import { MapComponent } from './features/map/map.component';
+import { StepperComponent } from './shared/components/stepper/stepper.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-root',
+  selector: 'amb-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [CommonModule, MapComponent, StepperComponent, MatButtonModule, MatIconModule]
 })
 export class AppComponent {
-  title = 'ambulance-tracker';
+  /**
+   * Injected SimulationService to manage the simulation state and actions.
+   */
+  protected readonly sim = inject(SimulationService);
 }

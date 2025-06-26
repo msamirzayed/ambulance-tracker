@@ -1,0 +1,10 @@
+{
+  "entryPoints": ["src/app"],
+  "entryPointStrategy": "expand",         // ✅ allow folder traversal
+  "tsconfig": "tsconfig.json",
+  "out": "docs",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "categorizeByGroup": false,
+  "theme": "default"
+}

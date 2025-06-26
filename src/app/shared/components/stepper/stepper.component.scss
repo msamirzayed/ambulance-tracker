@@ -1,0 +1,19 @@
+.stepper-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* --- Remove blue active icon (selected/primary) completely --- */
+::ng-deep .mat-step-icon.mat-step-icon-selected,
+::ng-deep .mat-step-icon.mat-step-icon-state-number.mat-step-icon-selected,
+::ng-deep .mat-step-icon.mat-step-icon-state-number.mat-step-icon-selected.mat-primary {
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important; /* optional: light border for clarity */
+}
+
+/* --- Optional: completed green tick styling --- */
+::ng-deep .mat-step-icon.mat-step-icon-state-done {
+  background-color: #005cbb !important;
+  color: white !important;
+}

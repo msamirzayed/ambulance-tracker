@@ -1,6 +1,29 @@
+/**
+ * Angular bootstrapping entry-point.
+ */
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+import 'leaflet/dist/leaflet.css';
+
 import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(),
+    provideAnimations(),
+    importProvidersFrom(
+      MatStepperModule,
+      MatProgressBarModule,
+      MatButtonModule,
+      MatIconModule
+    )
+  ]
+}).catch(console.error);

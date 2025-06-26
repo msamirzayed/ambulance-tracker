@@ -1,27 +1,63 @@
-# AmbulanceTracker
+# 🚑 Ambulance Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+A simple, animated ambulance tracker showing movement from a hospital to an accident site using Angular and Leaflet.js. Includes a visual stepper and progress bar.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📁 Project Structure
 
-## Code scaffolding
+```bash
+src/
+├── app/
+│   ├── core/                     # Services, constants, core utilities
+│   │   └── services/
+│   │       └── simulation.service.ts
+│   ├── shared/                   # Shared UI components
+│   │   └── components/
+│   │       ├── stepper/
+│   │       └── progress-bar/
+│   └── features/
+│       └── map/
+│           └── map.component.ts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## 📦 Prerequisites
+| Tool | Version (tested) | Install |
+|------|-----------------|---------|
+| **Node.js** | ≥ 18 LTS   | <https://nodejs.org/> |
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🚀 Quick-Start
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+# 1 Clone
+git clone https://github.com/msamirzayed/ambulance-tracker
+cd ambulance-tracker
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# 2 Install deps
+npm install
+
+# 3 Run dev server
+ng serve    # → http://localhost:4200
+
+
+## 📚 Generate API Docs
+npx typedoc      # uses typedoc.json
+# output: docs/index.html
+
+---
+
+## 💡 Features
+🚨 Animated Leaflet Map (static route)
+
+✅ Material Stepper with progress feedback
+
+🎯 Fully standalone – no backend
+
+🔄 Restart animation logic
+
+💯 Designed using Angular Standalone Components
